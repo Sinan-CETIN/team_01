@@ -30,7 +30,5 @@ public class Question_05_22 {
             loanAmount -= principal;
             System.out.printf("%-25d%-25.2f%-25.2f%-25.2f\n", (i + 1), interest, principal, loanAmount);
         }
-
-        MultiplicationTable.printMultiplicationTable();
     }
 }
