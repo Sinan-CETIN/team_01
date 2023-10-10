@@ -11,26 +11,22 @@ public class Deck {
     }
 
     public static int pick4Cards(int[] deck, int[] pick) {
-        int numberOfPick = 0;
+        int numberOfPick = 0; // denememizi sayan degisken
 
+        // haveSuits herhangi bir suitten karta sahip olup olmadimizi kontrol ediyor.
         boolean[] haveSuits = new boolean[4];
-
-//        for (int i = 0; i < pick.length; i++) {
-//            pick[i] = Integer.MIN_VALUE;
-//        }
-
         int index = 0;
+
         while (index < 4) {
             int card = pickOneCard(deck);
-            int indexOfBoolean = card / 13;
-            numberOfPick++;
-            if (!haveSuits[indexOfBoolean]) {
-                haveSuits[indexOfBoolean] = true;
-                pick[index++] = card;
+            numberOfPick++; // her cekilen kart bizim degiskenimizi bir arttiriyor
+
+            int suitType = card / 13; // cekilen kartin suiti (sayi olarak)
+
+            if (!haveSuits[suitType]) { // cekilen kart suiti bizde yoksa onu picke ekliyoruz.
+                haveSuits[suitType] = true; // Cekilen kartin suitini true yaparak listemizde o suite sahip oldugumuzu gosteriyoruz.
+                pick[index++] = card; // karti listemize ekliyoruz
             }
-//            if (!contains(pick, card)) {
-//                  pick[index++] = card;
-//            }
         }
 
 
@@ -70,15 +66,21 @@ public class Deck {
 
     public static void displayDeck(int[] deck) {
         for (int i = 0; i < deck.length; i++) {
-            String name = getName(deck[i]);
-            System.out.println(deck[i] + " -> " + name);
+            String suit = getSuit(deck[i]);
+            String number = getNumber(deck[i]);
+            System.out.println(deck[i] + " -> " + number + " of " + suit);
         }
     }
 
-    public static String getName(int number) {
+    public static String getSuit(int cardNumber) {
         String[] suits = {"Spades", "Clubs", "Diamonds", "Hearts"};
+        int index = cardNumber / 13;
+        return suits[index];
+    }
+
+    public static String getNumber(int cardNumber) {
         String[] numbers = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Joker", "Queen", "King"};
-        String result = numbers[(number % 13)] + " of " + suits[(number / 13)];
-        return result;
+        int index = cardNumber % 13;
+        return numbers[index];
     }
 }
