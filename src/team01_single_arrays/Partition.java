@@ -13,13 +13,13 @@ public class Partition {
         System.out.println(Arrays.toString(arr));
 
         // After sorted cozum 1 ->
-        int index = partition(arr);
-        System.out.println(Arrays.toString(arr));
+//        int index = partition(arr);
+//        System.out.println(Arrays.toString(arr));
 
         // After sorted cozum 2 ->
-        int index1 = partition1(arr);
+        arr = partition1(arr);
         System.out.println(Arrays.toString(arr));
-        System.out.println("Pivot index -> " + index);
+//        System.out.println("Pivot index -> " + index1);
 
     }
 
@@ -32,11 +32,13 @@ public class Partition {
     }
 
     // cozum2
-    private static int partition1(int[] arr) {
+    private static int[] partition1(int[] arr) {
+
         // yeni bir array olustururak cozum
         int[] arr2 = new int[arr.length];
         int startindex = 0;
         int endindex = arr.length - 1;
+
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] <= arr[0]) {
                 arr2[startindex] = arr[i];
@@ -49,7 +51,7 @@ public class Partition {
         }
         arr2[endindex] = arr[0];
 
-        return endindex;
+        return arr2;
     }
 
 
