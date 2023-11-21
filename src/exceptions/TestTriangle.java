@@ -1,4 +1,4 @@
-package exception;
+package exceptions;
 
 public class TestTriangle {
     public static void main(String[] args) {

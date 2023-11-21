@@ -1,4 +1,4 @@
-package exception;
+package exceptions;
 //
 // /Users/Sinan/inar-workspace/team_01/src/exception/DeleteTest.java
 // Users, Sinan  exception ;          DeleteTest.java
