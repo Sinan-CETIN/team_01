@@ -5,6 +5,8 @@ import java.math.*;
 public class SortComparableObjects {
     public static void main(String[] args) {
 
+        BigInteger bi = new BigInteger("123");
+
         Rectangle[] rectangles = {new Rectangle(2, 3),
                 new Rectangle(2, 5),
                 new Rectangle(6, 3)};

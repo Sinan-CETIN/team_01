@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 public class StringDegistir {
     public static void main(String[] args) {
-        String sourcePath = "Tersten.txt";
-        String exString = "Cello";
-        String newString = "Kral";
+        String sourcePath = "src/abstract_classes/Rational.java";
+        String exString = "throws IllegalDenominatorException";
+        String newString = "";
 
         File file = new File(sourcePath);
 

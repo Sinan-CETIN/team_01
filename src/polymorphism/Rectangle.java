@@ -22,30 +22,48 @@ public class Rectangle
         setFilled(filled);
     }
 
-    /** Return width */
+    /**
+     * Return width
+     */
     public double getWidth() {
         return width;
     }
 
-    /** Set a new width */
+    /**
+     * Set a new width
+     */
     public void setWidth(double width) {
         this.width = width;
     }
 
-    /** Return height */
+    /**
+     * Return height
+     */
     public double getHeight() {
         return height;
     }
 
-    /** Set a new height */
+    public String toString() {
+        return "Rectangle -> " + this.getArea();
+    }
+
+    /**
+     * Set a new height
+     */
     public void setHeight(double height) {
         this.height = height;
     }
-    /** Return area */
+
+    /**
+     * Return area
+     */
     public double getArea() {
         return width * height;
     }
-    /** Return perimeter */
+
+    /**
+     * Return perimeter
+     */
     public double getPerimeter() {
         return 2 * (width + height);
     }

@@ -1,6 +1,6 @@
 package polymorphism;
 
-public abstract class GeometricObject {
+public abstract class GeometricObject implements Cloneable, Comparable<GeometricObject> {
     private String color = "white";
     private boolean filled;
     private java.util.Date dateCreated;
@@ -63,10 +63,22 @@ public abstract class GeometricObject {
                 " and filled: " + filled;
     }
 
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public int compareTo(GeometricObject o) {
+        return o.getArea() > this.getArea() ? -1 :
+                o.getArea() == this.getArea() ? 0 : 1;
+    }
+
     /**
      * Abstract method getArea
      */
     public abstract double getArea();
+
 
     /**
      * Abstract method getPerimeter

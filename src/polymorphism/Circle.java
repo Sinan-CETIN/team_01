@@ -17,6 +17,10 @@ public class Circle extends GeometricObject {
         setFilled(filled);
     }
 
+    @Override
+    public String toString() {
+        return "Circle -> " + this.getArea();
+    }
     /** Return radius */
     public double getRadius() {
         return radius;
@@ -46,5 +50,9 @@ public class Circle extends GeometricObject {
     public void printCircle() {
         System.out.println("The circle is created " + getDateCreated() +
                 " and the radius is " + radius);
+    }
+    @Override
+    public Circle clone() throws CloneNotSupportedException {
+        return (Circle)super.clone();
     }
 }

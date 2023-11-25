@@ -1,3 +1,4 @@
+import java.util.Date;
 import java.util.Scanner;
 
 public class Example1 {
@@ -6,6 +7,10 @@ public class Example1 {
         // 22
         // 333
         // 1 2 3 4 . . . . . n
+        Date date = new Date();
+        System.out.print("getDate() -> ");
+        System.out.println(date.getYear());
+
 
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a number -> ");
